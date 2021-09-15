@@ -29,3 +29,11 @@ class User(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=32)
     age = models.IntegerField()
+
+
+class Product(models.Model):
+    product_name = models.CharField(max_length=25)
+    product_cost = models.FloatField(max_length=10)
+    description = models.TextField(max_length=200)
+    vendor_code = models.IntegerField()
+    serial_number = models.CharField(max_length=16)
