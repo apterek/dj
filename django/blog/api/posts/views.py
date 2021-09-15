@@ -4,7 +4,7 @@ from api.posts.serializers import PostSerializer
 from post.models import Post
 
 
-class PostViewSet2(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
     """
    API endpoint that allows posts to be viewed.
    """
