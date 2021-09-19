@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f47351ab-1fd3-48d5-a664-3b067ab7f6ca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/blog/media/200033600417_118082.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/media/248202540_394497.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/media/400027500088_132541.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/200236100779_281670.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/blog/media/200236100779_281670.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0002_post_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0003_tags.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0004_rename_tags_tag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0005_auto_20210906_1838.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0006_alter_user_age.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0007_remove_post_author.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0008_product.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0009_alter_product_vendor_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/migrations/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1yMJ2InsILY6DDCLnHk3IrnULRP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite&#10;postgresql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../homework/todoshka" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\apterek\dj\dj\django\blog\post" />
+      <recent name="\\wsl$\Ubuntu\home\apterek\dj\dj\django\blog\media" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f47351ab-1fd3-48d5-a664-3b067ab7f6ca" name="Changes" comment="" />
+      <created>1632055317556</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632055317556</updated>
+      <workItem from="1632055319664" duration="4380000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

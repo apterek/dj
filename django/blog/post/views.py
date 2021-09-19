@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import logging
 from django.http import HttpResponse
-from post.models import Post, User
+from post.models import Post
 from post.forms import RegistrationForm
 
 logger = logging.getLogger(__name__)
