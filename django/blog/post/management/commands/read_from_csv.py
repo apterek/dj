@@ -6,10 +6,18 @@ import csv
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
-        parser.add_argument("--filename")
+        parser.add_argument('filename', type=str)
 
     def handle(self, *args, **options):
-        with open(options["filename"], "a+") as file:
+        all_post = Post.objects.all()
+        t = False
+        with open(options["filename"], "r+") as file:
+            writer = csv.writer(file)
             reader = csv.reader(file)
             for row in reader:
-                print(row)
+                coincidence = False
+                for post in all_post:
+                    if post.title == row[0]:
+                        coincidence = True
+                if not coincidence:
+                    Post.objects.create(title=row[0], slug=row[1])

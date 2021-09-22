@@ -22,3 +22,8 @@ def register(request):
     form = RegistrationForm()
     logger.info(request.POST)
     return render(request, "register.html", {"form": form})
+
+
+def all_post(request):
+    post = Post.objects.all()
+    return render(request, "all_post.html", {"post": post})

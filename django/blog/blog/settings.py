@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-(m2!ntdcd76wp*sd8p9zz79(!bq-h**mk4945u5&j**3nrz7yg
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -74,22 +73,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-   "default": {
-       "ENGINE": "django.db.backends.postgresql",
-       "NAME": "django",
-       "USER": "apterek",
-       "PASSWORD": "271036yY#",
-       "HOST": "86.57.172.29",
-       "PORT": 13513,
-       "OPTIONS": {'sslmode': 'require'},
-   }
-}
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
+"""DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "django",
+        "USER": "apterek",
+        "PASSWORD": "271036yY#",
+        "HOST": "86.57.172.29",
+        "PORT": 13513,
+        "OPTIONS": {'sslmode': 'require'},
+    }
+}"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -109,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -123,7 +126,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
@@ -134,7 +136,6 @@ STATIC_URL = "/static/"
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
