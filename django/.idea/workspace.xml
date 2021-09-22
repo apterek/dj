@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f47351ab-1fd3-48d5-a664-3b067ab7f6ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/media/200033600417_118082.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/media/248202540_394497.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/media/400027500088_132541.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/200236100779_281670.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/blog/media/200236100779_281670.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0002_post_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0003_tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0004_rename_tags_tag.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0005_auto_20210906_1838.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0006_alter_user_age.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0007_remove_post_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0008_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/0009_alter_product_vendor_code.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/migrations/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +13,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1yMJ2InsILY6DDCLnHk3IrnULRP" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -49,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../homework/todoshka" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -65,7 +46,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632055317556</updated>
-      <workItem from="1632055319664" duration="4380000" />
+      <workItem from="1632055319664" duration="4465000" />
+      <workItem from="1632247707538" duration="434000" />
+      <workItem from="1632248147247" duration="251000" />
+      <workItem from="1632248416036" duration="18000" />
     </task>
     <servers />
   </component>
@@ -82,6 +66,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

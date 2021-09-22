@@ -4,14 +4,13 @@ from django.db import models
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
-    test = models.CharField(max_length=200, blank=True, null=True)
     title = models.CharField(max_length=200)
     image = models.ImageField(blank=True, null=True)
     slug = models.SlugField()
     created_at = models.DateTimeField(
         auto_now_add=True, db_index=True
     )
-    tag = models.ForeignKey("Tag", on_delete=models.CASCADE, blank=True)
+    tag = models.ForeignKey("Tag", on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.title
