@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import logging
 from django.http import HttpResponse
 from post.models import Post
-from post.forms import RegistrationForm
+from post.forms import RegistrationForm, AddPostForm
 
 logger = logging.getLogger(__name__)
 
@@ -27,3 +27,15 @@ def register(request):
 def all_post(request):
     post = Post.objects.all()
     return render(request, "all_post.html", {"post": post})
+
+
+def add_post(request):
+    if request.method == "POST":
+        form = AddPostForm(request.POST)
+        if form.is_valid():
+            Post.objects.create(**form.cleaned_data)
+            return redirect("add_post")
+    else:
+        form = AddPostForm()
+
+    return render(request, "add_post.html", {"form": form})

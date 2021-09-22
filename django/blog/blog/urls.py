@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from post.views import all_post
+from post.views import all_post, add_post
 
 
 urlpatterns = [
@@ -10,7 +10,8 @@ urlpatterns = [
     path("api/", include(
         "api.urls", namespace="api"
     )),
-    path("", all_post)
+    path("", all_post),
+    path("add_post/", add_post, name="add_post")
 ]
 
 if settings.DEBUG:

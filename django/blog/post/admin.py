@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from post.models import Post, Tag
+from post.models import Post, Tag, Files
 
 
 @admin.register(Post)
@@ -16,4 +16,10 @@ class TagsAdmin(admin.ModelAdmin):
     list_display = ("title", )
     fields = ("title", "posts",)
     search_fields = ("title", )
+
+
+@admin.register(Files)
+class FilesAdmin(admin.ModelAdmin):
+    list_display = ("title", "file", )
+    fields = ("title", "file",)
 

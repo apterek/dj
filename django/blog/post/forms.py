@@ -1,4 +1,5 @@
 from django import forms
+from post.models import Post
 
 
 class RegistrationForm(forms.Form):
@@ -9,3 +10,8 @@ class RegistrationForm(forms.Form):
         min_length=8, widget=forms.PasswordInput()
     )
     age = forms.IntegerField(min_value=18, required=False)
+
+
+class AddPostForm(forms.Form):
+    title = forms.CharField()
+    slug = forms.SlugField()

@@ -3,13 +3,12 @@ from django.db import models
 
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     image = models.ImageField(blank=True, null=True)
     slug = models.SlugField()
-    created_at = models.DateTimeField(
-        auto_now_add=True, db_index=True
-    )
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True,
+                               blank=True)
     tag = models.ForeignKey("Tag", on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
@@ -48,3 +47,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class Files(models.Model):
+    title = models.CharField(max_length=200)
+    file = models.FileField()

@@ -10,9 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         all_post = Post.objects.all()
-        t = False
-        with open(options["filename"], "r+") as file:
-            writer = csv.writer(file)
+        with open(options["filename"], "r") as file:
             reader = csv.reader(file)
             for row in reader:
                 coincidence = False
