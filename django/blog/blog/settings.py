@@ -88,9 +88,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "django",
         "USER": "apterek",
-        "PASSWORD": "271036yY#",
-        "HOST": "86.57.172.29",
-        "PORT": 13513,
+        "PASSWORD": "#",
+        "HOST": "#",
+        "PORT": #,
         "OPTIONS": {'sslmode': 'require'},
     }
 }
