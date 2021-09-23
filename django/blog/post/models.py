@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Post(models.Model):
+    objects = None
     title = models.CharField(max_length=200)
     image = models.ImageField(blank=True, null=True)
     slug = models.SlugField()

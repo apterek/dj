@@ -6,7 +6,7 @@ from post.models import Post
 
 
 @pytest.mark.django_db
-class TestPostsApi:
+class TestHomePage:
 
     def test_home_page(self):
         # previously run a server
