@@ -69,6 +69,6 @@ class Files(models.Model):
     class Meta:
         verbose_name = "File"
         verbose_name_plural = "Files"
-        
+
     def __str__(self):
         return self.title
