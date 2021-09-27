@@ -12,6 +12,10 @@ class Post(models.Model):
                                blank=True)
     tag = models.ForeignKey("Tag", on_delete=models.CASCADE, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
     def __str__(self):
         return self.title
 
@@ -35,6 +39,10 @@ class User(models.Model):
     password = models.CharField(max_length=32)
     age = models.IntegerField()
 
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+
     def __str__(self):
         return self.first_name, self.last_name
 
@@ -46,6 +54,10 @@ class Product(models.Model):
     vendor_code = models.IntegerField()
     serial_number = models.CharField(max_length=16)
 
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+
     def __str__(self):
         return self.product_name
 
@@ -53,3 +65,10 @@ class Product(models.Model):
 class Files(models.Model):
     title = models.CharField(max_length=200)
     file = models.FileField()
+
+    class Meta:
+        verbose_name = "File"
+        verbose_name_plural = "Files"
+        
+    def __str__(self):
+        return self.title
