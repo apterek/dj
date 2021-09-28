@@ -3,40 +3,28 @@ from django.db import models
 
 
 class Product(models.Model):
-    product_name = models.CharField()
-    vendor = models.CharField(max_length=40)
-    cost = models.FloatField()
-    quantity = models.IntegerField()
+    title = models.CharField(max_length=200, default=True)
+    cost = models.IntegerField(null=True)
     photo = models.ImageField(
-        upload_to='images/%Y/%m/%d/')  # /%Y/%m/%d/ - creating dir for each day, when download image
+        upload_to='images/%Y/%m/%d/', null=True)  # /%Y/%m/%d/ - creating dir for each day, when download image
 
     class Meta:
-        verbouse_name = "Product"
-        verbouse_name_plural = "Products"
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
 
     def __str__(self):
-        return self.product_name
+        return self.title
 
 
 class Purchase(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user = models.ForeignKey("User", on_delete=models.CASCADE)
-    purchases = models.IntegerField()
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name="purchases", on_delete=models.CASCADE, blank=True, null=True
+    )
+    product = models.ForeignKey(
+        Product, related_name="purchases", on_delete=models.CASCADE, default=True
+    )
+    count = models.IntegerField(null=True)
 
     class Meta:
-        verbouse_name = "Purchase"
-        verbouse_name_plural = "Purchases"
-
-
-class User(models.Model):
-    user_name = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True,
-                                  blank=True)
-    email = models.EmailField(max_length=30)
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-
-    class Meta:
-        verbouse_name = "User"
-        verbouse_name_plural = "Users"
-
-    def __str__(self):
-        return self.user_name
+        verbose_name = "Purchase"
+        verbose_name_plural = "Purchases"
