@@ -2,12 +2,28 @@ from django.conf import settings
 from django.db import models
 
 
+STATUS_CHOICES = (("IN_STOCK", "In Stock"), ("OUT_OF_STOCK", "Out Of Stock"))
+
+ORDER_BY_CHOICES = (
+    ("price_asc", "Price Asc"),
+    ("price_desc", "Price Desc"),
+    ("max_count", "Max Count"),
+    ("max_price", "Max Price"),
+)
+
+
 class Product(models.Model):
     title = models.CharField(max_length=200, default=True)
     cost = models.IntegerField(null=True)
     photo = models.ImageField(
         upload_to='images/%Y/%m/%d/', null=True)  # /%Y/%m/%d/ - creating dir for each day, when download image
-    choise = models.IntegerField(choices=((1, "router"), (2, "switch")), default=1)
+    description = models.TextField(default="")
+    status = models.CharField(
+        max_length=100, choices=STATUS_CHOICES, default="IN_STOCK"
+    )
+    favorites = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, related_name="favorite_products"
+    )
 
     class Meta:
         verbose_name = "Product"
@@ -29,3 +45,6 @@ class Purchase(models.Model):
     class Meta:
         verbose_name = "Purchase"
         verbose_name_plural = "Purchases"
+
+    def __str__(self):
+        return f"{self.user} - {self.product}"
