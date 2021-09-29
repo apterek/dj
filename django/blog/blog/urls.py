@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from post.views import all_post, add_post
+from shop.views import product_list
 
 
 urlpatterns = [
@@ -11,7 +12,8 @@ urlpatterns = [
         "api.urls", namespace="api"
     )),
     path("", all_post),
-    path("add_post/", add_post, name="add_post")
+    path("add_post/", add_post, name="add_post"),
+    path("shop/", product_list, name="product")
 ]
 
 if settings.DEBUG:

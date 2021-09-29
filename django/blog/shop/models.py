@@ -7,6 +7,7 @@ class Product(models.Model):
     cost = models.IntegerField(null=True)
     photo = models.ImageField(
         upload_to='images/%Y/%m/%d/', null=True)  # /%Y/%m/%d/ - creating dir for each day, when download image
+    choise = models.IntegerField(choices=((1, "router"), (2, "switch")), default=1)
 
     class Meta:
         verbose_name = "Product"
