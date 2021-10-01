@@ -26,5 +26,3 @@ class Command(BaseCommand):
             for ans in answer:
                 writer.writerow([ans["title"], ans["slug"],
                                  ans["created_at"]])
-
-

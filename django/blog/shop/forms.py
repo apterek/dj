@@ -9,15 +9,23 @@ class FormStatus(forms.Form):
         widget=forms.Select(attrs={"class": "ml-1 mr-3"}),
         required=False,
     )
+
     cost__gt = forms.IntegerField(
         min_value=0,
         label="Price Min",
         widget=forms.TextInput(attrs={"class": "ml-1 mr-3"}),
         required=False,
     )
+
     cost__lt = forms.IntegerField(
         min_value=0,
         label="Price Max",
         widget=forms.TextInput(attrs={"class": "ml-1 mr-3"}),
+        required=False,
+    )
+
+    order_by = forms.ChoiceField(
+        choices=ORDER_BY_CHOICES,
+        widget=forms.Select(attrs={"class": "ml-1 mr-3"}),
         required=False,
     )

@@ -2,13 +2,13 @@ from django.conf import settings
 from django.db import models
 
 
-STATUS_CHOICES = (("IN_STOCK", "In Stock"), ("OUT_OF_STOCK", "Out Of Stock"))
+STATUS_CHOICES = (("IN_STOCK", "In Stock"), ("OUT_OF_STOCK", "Out Of Stock"), ("ALL_PRODUCT", "All products"))
 
 ORDER_BY_CHOICES = (
-    ("price_asc", "Price Asc"),
-    ("price_desc", "Price Desc"),
+    ("max_cost", "Max Cost"),
     ("max_count", "Max Count"),
-    ("max_price", "Max Price"),
+    #("price_asc", "Price Asc"),
+    #("price_desc", "Price Desc"),
 )
 
 
@@ -47,4 +47,4 @@ class Purchase(models.Model):
         verbose_name_plural = "Purchases"
 
     def __str__(self):
-        return f"{self.user} - {self.product}"
+        return self.product
