@@ -4,6 +4,7 @@ from shop.models import STATUS_CHOICES, ORDER_BY_CHOICES
 
 
 class FormStatus(forms.Form):
+
     status = forms.ChoiceField(
         choices=STATUS_CHOICES,
         widget=forms.Select(attrs={"class": "ml-1 mr-3"}),

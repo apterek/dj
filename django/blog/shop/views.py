@@ -26,10 +26,9 @@ def product_list(request):
                 products = products.annotate(
                     total_count=Sum("purchases__count")
                 ).order_by("-total_count")
-            if order_by == "max_price":
+            if order_by == "max_cost":
                 products = products.annotate(
-                    total_price=Sum("purchases__count") * F("price")
-                ).order_by("-total_price")
+                    total_price=Sum("purchases__count") * F("cost"))
 
     else:
         form = FormStatus()
