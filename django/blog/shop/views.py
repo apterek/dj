@@ -35,3 +35,11 @@ def product_list(request):
 
     return render(request, "product_list.html", {"products": products,
                                                  "form": form})
+
+
+def product_view(request, **kwargs):
+    product = Product.objects.get(id=kwargs["product_id"])
+    if request.method == "POST":
+        pass
+
+    return render(request, "product_item.html", {"product": product})

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from post.views import all_post, add_post
-from shop.views import product_list
+from shop.views import product_list, product_view
 
 
 urlpatterns = [
@@ -13,7 +13,8 @@ urlpatterns = [
     )),
     path("", all_post),
     path("add_post/", add_post, name="add_post"),
-    path("shop/", product_list, name="product")
+    path("shop/", product_list, name="product"),
+    path("product/<int:product_id>/", product_view, name="product_view")
 ]
 
 if settings.DEBUG:
