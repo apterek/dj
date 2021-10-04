@@ -7,8 +7,6 @@ STATUS_CHOICES = (("IN_STOCK", "In Stock"), ("OUT_OF_STOCK", "Out Of Stock"), ("
 ORDER_BY_CHOICES = (
     ("max_cost", "Max Cost"),
     ("max_count", "Max Count"),
-    #("price_asc", "Price Asc"),
-    #("price_desc", "Price Desc"),
 )
 
 

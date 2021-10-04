@@ -40,6 +40,9 @@ def product_list(request):
 def product_view(request, **kwargs):
     product = Product.objects.get(id=kwargs["product_id"])
     if request.method == "POST":
-        pass
-
-    return render(request, "product_item.html", {"product": product})
+        if request.user.is_authenticated and request.POST["action"] == "add":
+            product.favorites.add(request.user)
+        else:
+            product.favorites.remove(request.user)
+    return render(request, "product_item.html", {"product": product,
+                                                 "favorite_products": request.user in product.favorites.all()})
