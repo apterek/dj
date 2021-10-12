@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 def product_list(request):
     products = Product.objects.all()
-    form = FormStatus(request.POST)
+    form = FormStatus(request.GET)
     if form.is_valid():
         if form.cleaned_data["status"] == "IN_STOCK":
             products = products.filter(status="IN_STOCK")

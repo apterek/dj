@@ -11,9 +11,9 @@ urlpatterns = [
     path("api/", include(
         "api.urls", namespace="api"
     )),
-    path("", all_post, name="post"),
+    path("post/", all_post, name="post"),
     path("add_post/", add_post, name="add_post"),
-    path("shop/", product_list, name="product"),
+    path("", product_list, name="product"),
     path("product/<int:product_id>/", product_view, name="product_view")
 ]
 

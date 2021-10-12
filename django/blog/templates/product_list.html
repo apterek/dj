@@ -7,9 +7,9 @@
 
     <div class="col-md-12 col-md-pull-8">
         <div class="form-group row mb-6">
-            <form method="POST" class="form-control">
+            <form class="form-control">
                 {% csrf_token %}
-                {{ form }}
+                {{ form|crispy }}
                 <button type="submit" class="btn btn-primary">Select</button>
             </form>
         </div>
