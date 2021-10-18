@@ -46,3 +46,17 @@ class Purchase(models.Model):
 
     def __str__(self):
         return f"{self.product}"
+
+
+class Spider(models.Model):
+    title = models.CharField(max_length=100)
+    price = models.CharField(max_length=15)
+    link = models.CharField(max_length=200)
+    image_name = models.CharField(max_length=200, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Spider"
+        verbose_name_plural = "Spiders"
+
+    def __str__(self):
+        return f"{self.title}"

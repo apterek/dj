@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 import logging
 from shop.models import Product, Purchase
 from shop.forms import FormStatus
+from shop.spiders import OmaSpider
 
 logger = logging.getLogger(__name__)
 
@@ -46,3 +47,4 @@ def product_view(request, **kwargs):
             product.favorites.remove(request.user)
     return render(request, "product_item.html", {"product": product,
                                                  "favorite_products": request.user in product.favorites.all()})
+

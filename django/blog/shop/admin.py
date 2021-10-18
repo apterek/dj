@@ -1,5 +1,5 @@
 from django.contrib import admin
-from shop.models import Product, Purchase
+from shop.models import Product, Purchase, Spider
 
 
 @admin.register(Product)
@@ -13,3 +13,8 @@ class PostAdmin(admin.ModelAdmin):
 class PurchaseAdmin(admin.ModelAdmin):
     list_display = ("user", "product", "count", )
     fields = ("user", "product", "count", )
+
+
+@admin.register(Spider)
+class SpiderAdmin(admin.ModelAdmin):
+    list_display = ("title", "price", "link", )
