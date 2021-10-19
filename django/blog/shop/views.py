@@ -1,41 +1,28 @@
 import requests
+from django.contrib import messages
 from django.db.models import Sum, F
 from django.shortcuts import render, redirect
 import logging
 from shop.models import Product, Purchase
 from shop.forms import FormStatus
 from shop.spiders import OmaSpider
+from django.views.generic import TemplateView
+from shop.services import product_filter
 
 logger = logging.getLogger(__name__)
 
 
-def product_list(request):
-    products = Product.objects.all()
-    form = FormStatus(request.GET)
-    if form.is_valid():
-        if form.cleaned_data["status"] == "IN_STOCK":
-            products = products.filter(status="IN_STOCK")
-        if form.cleaned_data["status"] == "OUT_OF_STOCK":
-            products = products.filter(status="OUT_OF_STOCK")
-        if form.cleaned_data["cost__gt"]:
-            products = products.filter(cost__gt=form.cleaned_data["cost__gt"])
-        if form.cleaned_data["cost__lt"]:
-            products = products.filter(cost__lt=form.cleaned_data["cost__lt"])
-        if form.cleaned_data["order_by"]:
-            order_by = form.cleaned_data["order_by"]
-            if order_by == "max_count":
-                products = products.annotate(
-                    total_count=Sum("purchases__count")
-                ).order_by("-total_count")
-            if order_by == "max_cost":
-                products = products.annotate(
-                    total_cost=Sum("purchases__count") * F("cost")).order_by("-total_cost")
+class ProductViwe(TemplateView):
+    template_name = "product/product_list.html"
 
-    else:
-        form = FormStatus()
-
-    return render(request, "product_list.html", {"products": products,
-                                                 "form": form})
+    def get_context_data(self, **kwargs):
+        products = Product.objects.all()
+        form = FormStatus(self.request.GET)
+        if form.is_valid():
+            products = product_filter(products, **form.cleaned_data)
+        else:
+            form = FormStatus()
+        return {"products": products, "form": form}
 
 
 def product_view(request, **kwargs):
@@ -43,8 +30,9 @@ def product_view(request, **kwargs):
     if request.method == "POST":
         if request.user.is_authenticated and request.POST["action"] == "add":
             product.favorites.add(request.user)
+            messages.info(request, "Product added to favorites")
         else:
             product.favorites.remove(request.user)
-    return render(request, "product_item.html", {"product": product,
+            messages.info(request, "Product removed from favorites")
+    return render(request, "product/product_item.html", {"product": product,
                                                  "favorite_products": request.user in product.favorites.all()})
-
