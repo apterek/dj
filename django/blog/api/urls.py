@@ -10,7 +10,7 @@ app_name = "api"
 
 router = routers.DefaultRouter()
 router.register(r"posts", PostViewSet)
-router.register(r"product", ProductViewSet)
+router.register(r"product", ProductViewSet)  # old lesson, from blog app
 router.register(r"products", ProductsViewSet)
 #router.register(r"users", RegisterViewSet)
 

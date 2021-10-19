@@ -10,9 +10,13 @@ class ProductsSerializer(serializers.Serializer):
     description = serializers.CharField()
     status = serializers.ChoiceField(choices=STATUS_CHOICES)
 
-
     def validate_status(self, value):
         if Product.objects.filter(status="IN_STOCK"):
             raise serializers.ValidationError("ONLY IN STOCK")
         return value
+
+
+class FilterSerializer(serializers.Serializer):
+    price__gt = serializers.IntegerField(min_value=0, required=False)
+    price__lt = serializers.IntegerField(min_value=0, required=False)
 
