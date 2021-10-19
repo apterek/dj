@@ -3,9 +3,7 @@ import logging
 from shop.models import Spider
 from blog.settings import MEDIA_ROOT
 
-
 logger = logging.getLogger(__name__)
-
 
 
 class OmaSpider(scrapy.Spider):
@@ -33,10 +31,9 @@ class OmaSpider(scrapy.Spider):
 
             yield data, clean_image_urls
 
-
-        NEXT_PAGE_SELECTOR = 'a.btn.btn__light.btn__bigger.btn__page-nav.btn__nav-right.js_scroll_top::attr(href)'
-        next_page = response.css(NEXT_PAGE_SELECTOR).extract_first()
-        if next_page:
-            yield scrapy.Request(
-                response.urljoin(next_page),
-                callback=self.parse)
+            NEXT_PAGE_SELECTOR = 'a.btn.btn__light.btn__bigger.btn__page-nav.btn__nav-right.js_scroll_top::attr(href)'
+            next_page = response.css(NEXT_PAGE_SELECTOR).extract_first()
+            if next_page:
+                yield scrapy.Request(
+                    response.urljoin(next_page),
+                    callback=self.parse)
