@@ -7,10 +7,13 @@ from shop.models import Spider
 
 class Command(BaseCommand):
     help = "Crawl oma.by"
-    Spider.objects.all().delete()
+
+    def add_arguments(self, parser):
+        parser.add_argument("--clear", type=str)
 
     def handle(self, *args, **options):
-
+        if options["clear"]:
+            Spider.objects.all().delete()
         process = CrawlerProcess(get_project_settings())
         process.crawl(OmaSpider)
         process.start()
