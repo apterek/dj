@@ -9,7 +9,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path("", posts_index),
     path("api/", include(
-        "api.urls", namespace="api"
+        "api.urls", namespace="api",
     )),
     path("post/", all_post, name="post"),
     path("add_post/", add_post, name="add_post"),
