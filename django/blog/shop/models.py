@@ -36,9 +36,10 @@ class Purchase(models.Model):
         settings.AUTH_USER_MODEL, related_name="purchases", on_delete=models.CASCADE, blank=True, null=True
     )
     product = models.ForeignKey(
-        Product, related_name="purchases", on_delete=models.CASCADE, default=True
+        Product, related_name="purchases", on_delete=models.CASCADE, default=True, blank=True, null=True
     )
     count = models.IntegerField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True, blank=True, null=True)
 
     class Meta:
         verbose_name = "Purchase"

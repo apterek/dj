@@ -25,11 +25,18 @@
 
     <div class="container">
           {% if user.is_authenticated %}
+
+        <form method="POST" class="mt-4 form-inline">
+          {% csrf_token %}
+          <input type="hidden" name="action" value="buy">
+          <input type="text" name="quantity" value="" placeholder="Quantity" class="form-control mr-2">
+          <button type="submit" class="btn btn-primary">Buy It Now</button>
+        </form>
         <form method="POST" class="mt-4">
           {% csrf_token %}
           {% if favorite_products %}
-            <input type="hidden" name="action" value="delete">
-            <button type="submit" class="delete btn btn-primary">Delete from favorites</button>
+            <input type="hidden" name="action" value="remove">
+            <button type="submit" class="delete btn btn-primary">Remove from favorites</button>
           {% else %}
             <input type="hidden" name="action" value="add">
             <button type="submit" class="add btn btn-primary">Add to favorites</button>

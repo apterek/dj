@@ -1,0 +1,38 @@
+<!-- product_purchases.html -->
+{% extends "base.html" %}
+
+{% load static crispy_forms_tags %}
+
+{% block content %}
+    <div class="purchases">
+    <div class="row">
+        <div class="col-9">
+      <h1>Your purchases</h1>
+            </div>
+        <div class="col-3">
+            <div class="form-group">
+            <form class="form-control">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Select</button>
+            </form>
+        </div>
+        </div>
+
+    </div>
+      <table class="table">
+        <tr>
+          <th>Product</th>
+          <th>Count</th>
+          <th>Date</th>
+        </tr>
+        {% for purchase in purchases %}
+          <tr>
+            <td>{{ purchase.product }}</td>
+            <td>{{ purchase.count }}</td>
+            <td>{{ purchase.created_at }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+{% endblock %}
