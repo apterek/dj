@@ -15,7 +15,7 @@ class ProductFactory(DjangoModelFactory):
     status = "IN_STOCK"
 
 
-class UserFactory(DjangoModelFactory):
+"""class UserFactory(DjangoModelFactory):
     def __init__(self, password):
         password = self.password
 
@@ -36,3 +36,4 @@ class PurchaseFactory(DjangoModelFactory):
     product = ProductFactory()
     count = factory.Sequence(lambda n: 2 * n)
     created_at = datetime.datetime.now()
+"""

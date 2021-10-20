@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from shop.models import STATUS_CHOICES, ORDER_BY_CHOICES
-from shop.models import Product
 
 
 class ProductsSerializer(serializers.Serializer):

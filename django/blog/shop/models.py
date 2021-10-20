@@ -33,10 +33,10 @@ class Product(models.Model):
 
 class Purchase(models.Model):
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="purchases", on_delete=models.CASCADE, blank=True, null=True
+        settings.AUTH_USER_MODEL, related_name="user_purchases", on_delete=models.CASCADE, blank=True, null=True
     )
     product = models.ForeignKey(
-        Product, related_name="purchases", on_delete=models.CASCADE, default=True, blank=True, null=True
+        Product, related_name="product_purchases", on_delete=models.CASCADE, default=True, blank=True, null=True
     )
     count = models.IntegerField(null=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True, blank=True, null=True)
