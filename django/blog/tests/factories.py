@@ -1,10 +1,7 @@
 import factory
 import datetime
-import pytest
 from factory.django import DjangoModelFactory, DjangoOptions
 from shop.models import Product, Purchase
-from django.conf import settings
-from django.test import Client
 from django.contrib.auth.models import User
 
 
