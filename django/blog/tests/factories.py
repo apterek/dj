@@ -1,9 +1,11 @@
 import factory
 import datetime
-from factory.django import DjangoModelFactory
+import pytest
+from factory.django import DjangoModelFactory, DjangoOptions
 from shop.models import Product, Purchase
 from django.conf import settings
 from django.test import Client
+from django.contrib.auth.models import User
 
 
 class ProductFactory(DjangoModelFactory):
@@ -16,10 +18,24 @@ class ProductFactory(DjangoModelFactory):
     status = "IN_STOCK"
 
 
+class UserFactory(DjangoModelFactory):
+    def __init__(self, password):
+        password = self.password
+
+    class Meta:
+        model = User
+        django_get_or_create = ('username', 'email', 'password',)
+
+    username = 'apterek-test'
+    email = 'apterek-test@mail.ru'
+    password = '123'
+
+
 class PurchaseFactory(DjangoModelFactory):
     class Meta:
         model = Purchase
-    user = Client()
-    
+
+    user = UserFactory()
+    product = ProductFactory()
     count = factory.Sequence(lambda n: 2 * n)
     created_at = datetime.datetime.now()
