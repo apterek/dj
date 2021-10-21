@@ -1,4 +1,4 @@
-"""import pytest
+import pytest
 from django.urls import reverse
 
 from tests.factories import PurchaseFactory
@@ -25,4 +25,3 @@ class TestFilters:
         for query in test_filter_by_date:
             response = self.client.get(f"{self.url}?{query}")
             assert response.status_code == 200
-"""

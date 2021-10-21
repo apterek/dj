@@ -5,7 +5,6 @@ from django.test import Client
 
 @pytest.mark.django_db
 class TestFilters:
-
     def setup_method(self):
         self.client = Client()
         self.url = "http://localhost:8000/api/products/"

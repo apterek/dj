@@ -7,9 +7,8 @@ from shop.views import product_view, ProductViwe, PurchaseView
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path("", posts_index),
-    path("api/", include(
-        "api.urls", namespace="api",
-    )),
+    path("api/auth/", include("rest_framework.urls", namespace="rest_framework")),
+    path("api/", include("api.urls", namespace="api",)),
     path("post/", all_post, name="post"),
     path("add_post/", add_post, name="add_post"),
     path("", ProductViwe.as_view(), name="product"),

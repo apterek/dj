@@ -2,8 +2,6 @@ import pytest
 from rest_framework import status
 import requests
 
-from post.models import Post
-
 
 @pytest.mark.django_db
 class TestHomePage:
