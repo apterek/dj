@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-(m2!ntdcd76wp*sd8p9zz79(!bq-h**mk4945u5&j**3nrz7yg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -69,23 +69,22 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
-}
-"""DATABASES = {
+}"""
+DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "django",
-        "USER": "apterek",
-        "PASSWORD": "271036yY#",
-        "HOST": "86.57.172.29",
-        "PORT": 13513,
-        "OPTIONS": {'sslmode': 'require'},
+        "NAME": os.getenv("DB_NAME", "django"),
+        "USER": os.getenv("DB_USER", "django"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "django"),
+        "HOST": os.getenv("DB_HOST", "localhost"),
+        "PORT": os.getenv("DB_PORT", 5432),
     }
-}"""
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -156,7 +155,7 @@ REST_FRAMEWORK = {
 
 RQ_QUEUES = {
    "default": {
-       "HOST": "localhost",
+       "HOST": os.getenv("REDIS_HOST", "localhost"),
        "PORT": 6379,
        "DB": 0,
        "DEFAULT_TIMEOUT": 360,

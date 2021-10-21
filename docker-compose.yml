@@ -1,0 +1,33 @@
+--- 
+services: 
+  postgres: 
+    environment: 
+      - POSTGRES_DB=django
+      - POSTGRES_USER=django
+      - POSTGRES_PASSWORD=django
+    image: "postgres:12"
+  redis: 
+    image: "redis:6"
+  django:
+    build: "."
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DB_HOST=postgres
+      - REDIS_HOST=redis
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./django/blog/:/app/"
+  worker: 
+    build: "."
+    depends_on: 
+      - postgres
+      - redis
+    environment: 
+      - DB_HOST=postgres
+      - REDIS_HOST=redis
+    volumes: 
+      - "./django/blog/:/app/"
+version: "3.3"

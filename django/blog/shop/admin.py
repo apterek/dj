@@ -4,8 +4,8 @@ from shop.models import Product, Purchase, Spider
 
 @admin.register(Product)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "cost", "photo", "status", )
-    fields = ("title", "cost", "photo", "status", )
+    list_display = ("title", "cost", "photo", "status", "price_byn", )
+    fields = ("title", "cost", "photo", "status", "price_byn", )
     search_fields = ("title",)
 
 
