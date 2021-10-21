@@ -7,6 +7,7 @@ from shop.forms import FormStatus, FilterDate
 from django.views.generic import TemplateView
 from shop.services import product_filter
 
+
 logger = logging.getLogger(__name__)
 
 
@@ -53,3 +54,4 @@ class PurchaseView(TemplateView):
             return {"purchases": purchase, "form": filter_form}
         else:
             raise Http404
+

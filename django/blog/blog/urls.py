@@ -14,6 +14,7 @@ urlpatterns = [
     path("", ProductViwe.as_view(), name="product"),
     path("product/<int:product_id>/", product_view, name="product_view"),
     path("purchases/", PurchaseView.as_view(), name="purchases"),
+    path("django-rq/", include("django_rq.urls")),
 ]
 
 if settings.DEBUG:

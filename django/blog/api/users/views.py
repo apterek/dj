@@ -26,7 +26,6 @@ class RegisterViewSet(CreateAPIView, viewsets.GenericViewSet):
 
 
 class LoginView(CreateAPIView, viewsets.GenericViewSet):
-
     serializer_class = LoginUserSerializer
     permission_classes = []
 

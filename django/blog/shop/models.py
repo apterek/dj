@@ -22,6 +22,7 @@ class Product(models.Model):
     favorites = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="favorite_products"
     )
+    price_byn = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = "Product"
