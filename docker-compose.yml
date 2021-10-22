@@ -1,5 +1,5 @@
 --- 
-services: 
+services:
   postgres: 
     environment: 
       - POSTGRES_DB=django
@@ -20,7 +20,7 @@ services:
       - "8000:8000"
     volumes:
       - "./django/blog/:/app/"
-  worker: 
+  worker:
     build: "."
     depends_on: 
       - postgres
