@@ -1,6 +1,4 @@
-<H1>Результаты тестов:</H1>
-<div>
-  <p align="center">
-    <img src="result_pytest.png"width="600"/>  
-  </p>
-</div>
+<H1> Build and run app </H1>
+<br>
+For running application use file "run.sh" with the next command:
+<H3> sudo sh ./run.sh </H3>
