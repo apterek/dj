@@ -5,25 +5,21 @@ ENV PYTHONUNBUFFERED 1
 
 RUN mkdir -p /app
 
-RUN addgroup django --system && adduser -aG django django
-
 WORKDIR /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends vim
+    apt-get install -y --no-install-recommends vim && \
+    apt-get install -y --no-install-recommends netcat 
 
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --trusted-host pypi.org --no-cache-dir --upgrade pip && \
     pip install --trusted-host pypi.org --no-cache-dir -r /tmp/requirements.txt
 
 RUN apt-get autoremove -y --purge && \
-    apt-get clean -y \
+    apt-get clean -y 
 
-$ chmod +x app/entrypoint.sh \
+COPY ./django/blog/entrypoint.sh /app/entrypoint.sh
 
-RUN chown -R django:django /app
-
-USER django
-
-ENTRYPOINT ["/app/entrypoint.sh"]
+USER root
+CMD ["/app/entrypoint.sh"]
