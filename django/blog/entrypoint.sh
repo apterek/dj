@@ -17,6 +17,6 @@ echo "from django.contrib.auth import get_user_model;"\
      "User = get_user_model();"\
      "User.objects.create_superuser('apterek', 'apterek@mail.ru', '271036yY#')" \
      | python manage.py shell
-python manage.py collectstatic
+echo "yes" | python manage.py collectstatic
 
 exec "$@"
