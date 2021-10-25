@@ -21,5 +21,3 @@ RUN apt-get autoremove -y --purge && \
 
 COPY ./django/blog/entrypoint.sh /app/entrypoint.sh
 
-USER root
-CMD ["/app/entrypoint.sh"]
