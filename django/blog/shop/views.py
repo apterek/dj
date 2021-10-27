@@ -55,3 +55,6 @@ class PurchaseView(TemplateView):
         else:
             raise Http404
 
+
+def view_resume(request):
+    return render(request, "resume.html")

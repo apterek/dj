@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from post.views import all_post, add_post
-from shop.views import product_view, ProductViwe, PurchaseView
+from shop.views import product_view, ProductViwe, PurchaseView, view_resume
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -15,6 +15,7 @@ urlpatterns = [
     path("product/<int:product_id>/", product_view, name="product_view"),
     path("purchases/", PurchaseView.as_view(), name="purchases"),
     path("django-rq/", include("django_rq.urls")),
+    path("resume/", view_resume, name="resume")
 ]
 
 if settings.DEBUG:
